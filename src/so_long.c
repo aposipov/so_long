@@ -6,11 +6,25 @@
 /*   By: lchristi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 16:32:20 by lchristi          #+#    #+#             */
-/*   Updated: 2022/02/03 19:59:41 by lchristi         ###   ########.fr       */
+/*   Updated: 2022/02/05 18:22:50 by lchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
+
+int mouse_b(int keycode, t_data *vars)
+{
+	(void)vars;
+	//printf("%d\n", keycode); // key button print
+	if (keycode == 1)
+		printf("left button\n");
+	else if (keycode == 2)
+		printf("right button\n");
+	else if (keycode == 3)
+		printf("scroll\n");
+
+	return(0);
+}
 
 int	close_w(int keycode, t_data *vars)
 {
@@ -45,8 +59,9 @@ int main(void) // argc argv
 	vars.mlx = mlx_init();
 	vars.win = mlx_new_window(vars.mlx, 600, 600, "so_long");
 	
-	// init territ
+	// init manipul
 	mlx_key_hook(vars.win, close_w, &vars);
+	mlx_mouse_hook(vars.win, mouse_b, &vars);
 	//mlx_hook();
 	mlx_loop(vars.mlx);
 	return(0);
