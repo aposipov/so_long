@@ -24,6 +24,18 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
+size_t	ft_strlen1(const char *str)
+{
+	int	i;
+
+	if (!str)
+		return (0);
+	i = 0;
+	while (str[i] != '\n' && str[i])
+		i++;
+	return (i);
+}
+
 char	*ft_strjoin(char *str1, char *str2)
 {
 	char	*str;

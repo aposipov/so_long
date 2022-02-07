@@ -18,11 +18,8 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-
 typedef struct s_data {
-	
 	char	**f_map;
-
 	void	*mlx;
 	void	*win;	
 	void	*img;
@@ -32,6 +29,7 @@ typedef struct s_data {
 	int		endian;	
 }	t_data;
 
-char **read_map(char *map_file);
+char	**read_map(char *map_file);
+void	check_size_map(char **map);
 
 #endif

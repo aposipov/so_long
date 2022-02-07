@@ -21,8 +21,9 @@ char **read_map(char *map_file)
 	char **f_map = NULL;
 
 	fd = open(map_file, O_RDONLY);
-	line0 = get_next_line(fd);
-
+	if (fd < 0)
+		write(1, "file not found!\n", 16);
+	line = get_next_line(fd);
 	f_map = malloc(sizeof(char **));
 	while (line)
 	{
