@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchristi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 16:23:36 by lchristi          #+#    #+#             */
-/*   Updated: 2022/02/06 16:15:11 by lchristi         ###   ########.fr       */
+/*   Created: 2022/02/07 14:12:38 by lchristi          #+#    #+#             */
+/*   Updated: 2022/02/07 14:12:42 by lchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "../inc/so_long.h"
+#include "../inc/get_next_line.h"
 
-# include <mlx.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <fcntl.h>
+char **read_map(char *map_file)
+{
+	int fd;
+	int i = 0;
+	char *line;
+	char **f_map = NULL;
 
+	fd = open(map_file, O_RDONLY);
+	line0 = get_next_line(fd);
 
-typedef struct s_data {
-	
-	char	**f_map;
+	f_map = malloc(sizeof(char **));
+	while (line)
+	{
+		f_map[i] = line;
+		line = get_next_line(fd);
+		i++;
+	}
+	f_map[i] = NULL;
+	return(f_map);
+}
 
-	void	*mlx;
-	void	*win;	
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;	
-}	t_data;
-
-char **read_map(char *map_file);
-
-#endif
