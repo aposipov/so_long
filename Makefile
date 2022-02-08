@@ -23,6 +23,10 @@ SRC = ./src/so_long.c ./src/map.c\
 
 OBJ = $(patsubst %.c,%.o,$(SRC))
 
+RED='\033[4;31m'
+GREEN='\033[0;32m'
+NC='\033[0;0m'
+
 all:	$(NAME)
 
 $(NAME): 	$(OBJ)
@@ -33,10 +37,11 @@ $(NAME): 	$(OBJ)
 
 clean:
 		$(RM) ${OBJ}
-		@echo *.o files is clean
+		@echo $(RED) *.o files is clean $(NC)
 
 fclean:	clean
 		$(RM) so_long
+		@echo all files is clean
 
 re:	fclean all
 

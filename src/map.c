@@ -13,16 +13,18 @@
 #include "../inc/so_long.h"
 #include "../inc/get_next_line.h"
 
-char **read_map(char *map_file)
+char	**read_map(char *map_file)
 {
-	int fd;
-	int i = 0;
-	char *line;
-	char **f_map = NULL;
+	int		fd;
+	int		i;
+	char	*line;
+	char	**f_map;
 
+	i = 0;
+	f_map = NULL;
 	fd = open(map_file, O_RDONLY);
 	if (fd < 0)
-		write(1, "file not found!\n", 16);
+		write(1, "the file does not exist!\n", 25);
 	line = get_next_line(fd);
 	f_map = malloc(sizeof(char **));
 	while (line)
@@ -32,6 +34,33 @@ char **read_map(char *map_file)
 		i++;
 	}
 	f_map[i] = NULL;
-	return(f_map);
+	if (!f_map[0])
+	{
+		write(1, "check the file map! empty!\n", 27);
+		exit(0);
+	}
+	return (f_map);
+}
+
+void	check_size_map(char **map)
+{
+	size_t	length;
+	size_t	height;
+	int		i;
+
+	i = 0;
+	height = 0;
+	length = ft_strlen1(map[i]);
+	while (map[height])
+		height++;
+	while (map[i])
+	{
+		if (length != ft_strlen1(map[i]))
+		{
+			write(1, "file map is not valid!\n", 23);
+			exit(0);
+		}
+		i++;
+	}
 }
 
