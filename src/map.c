@@ -46,6 +46,7 @@ void	check_size_map(char **map)
 {
 	size_t	length;
 	size_t	height;
+	t_size	w_size;
 	int		i;
 
 	i = 0;
@@ -62,5 +63,8 @@ void	check_size_map(char **map)
 		}
 		i++;
 	}
+	w_size.x = length;
+	w_size.y = height;
 }
 
+// check elements
