@@ -35,8 +35,9 @@ void	draw_block(char block, t_data *vars, int i, int j)
 		draw("./xpm/ground.xpm", *vars);
 	else if (block == 'C')
 	{
-		draw("./xpm/ground.xpm", *vars);
+		//draw("./xpm/ground.xpm", *vars);
 		draw("./xpm/key_50_50.xpm", *vars);
+		draw("./xpm/ground.xpm", *vars);
 //		game->collect += 1;
 	}
 	else if (block == 'E')

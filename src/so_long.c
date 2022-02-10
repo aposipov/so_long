@@ -55,6 +55,7 @@ int	main(int argc, char **argv)
 		ft_extension(argv[1]);
 		vars.f_map = read_map(argv[1]);
 		check_size_map(vars.f_map);
+
 		//
 		vars.mlx = mlx_init();
 		vars.win = mlx_new_window(vars.mlx, 1200, 400, "so_long");
