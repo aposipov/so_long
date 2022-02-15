@@ -21,6 +21,7 @@ HEADER = ./inc/so_long.h ./inc/get_next_line.h
 SRC = ./src/so_long.c ./src/map.c ./src/draw_map.c\
 		./src/get_next_line.c ./src/get_next_line_utils.c\
 		./src/movements.c\
+		./src/map2.c\
 
 OBJ = $(patsubst %.c,%.o,$(SRC))
 

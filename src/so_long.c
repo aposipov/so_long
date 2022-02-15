@@ -44,7 +44,7 @@ void	ft_extension(char *path)
 
 int	main(int argc, char **argv)
 {
-	t_data	vars;
+	//t_data	vars;
 	t_size w_size;
 	int		i;
 
@@ -53,21 +53,33 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		ft_extension(argv[1]);
-		vars.f_map = read_map(argv[1]);
-		check_size_map(vars.f_map);
+		check_chr(argv[1]);
+//		check_size_map(argv[1]);
+//		read_map(argv[1]);
+//		printf("x=%zu, y=%zu", w_size.x, w_size.y);
+//		vars.f_map = read_map2(argv[1]);
+		write(1, "test_1\n", 7);
+//		int n= 0;
+//		while(vars.f_map)
+//			printf("%s", vars.f_map[n++]);
+//		check_size_map(vars.f_map);
+		write(1, "test_2\n", 7);
 
-		//
-		vars.mlx = mlx_init();
-		vars.win = mlx_new_window(vars.mlx, 1200, 400, "so_long");
+//		vars.mlx = mlx_init();
+		write(1, "test_3\n", 7);
+//		vars.win = mlx_new_window(vars.mlx, 1000, 1000, "so_long");
+		write(1, "test_4\n", 7);
 //		vars.win = mlx_new_window(vars.mlx, w_size.x * 50, w_size.y * 50,
 //								  "so_long");
 		//write(1, &w_size.x, 3);
 		//printf("%d%d" w_size.x, w_size_y);
 		// game.dir = down
-		mlx_hook(vars.win, 17, 0, ft_close, 0);
-		map(vars.f_map, &vars);
-		mlx_key_hook(vars.win, movements, &vars);
-		mlx_loop(vars.mlx);
+//		mlx_hook(vars.win, 17, 0, ft_close, 0);
+//		map(vars.f_map, &vars);
+//		write(1, "test_1\n", 7);
+//		mlx_key_hook(vars.win, movements, &vars);
+//		write(1, "test_2\n", 7);
+//		mlx_loop(vars.mlx);
 	}
 	else
 		write(1, "check your arguments!\n", 22);

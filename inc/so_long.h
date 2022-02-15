@@ -13,7 +13,7 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "../minilibx/mlx.h"
+//# include "../minilibx/mlx.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
@@ -36,8 +36,10 @@ typedef struct s_data {
 	t_size	win_draw;
 }	t_data;
 
-char	**read_map(char *map_file);
-void	check_size_map(char **map);
+void	read_map(char *map_file);
+void	check_chr(char	*path);
+//char	**read_map2(char *map_file);
+//void	check_size_map(char *map_file);
 int		movements(int keycode, t_data *vars);
 void	draw(char *path, t_data vars);
 void	draw_block(char block, t_data *vars, int i, int j);
