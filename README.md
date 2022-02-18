@@ -8,6 +8,7 @@ https://www.online-image-editor.com/
 https://convertio.co/  
 https://anytools.pro/ru/img/editor/cover  
 https://photokit.com/  
+https://anyconv.com/ru/konverter-png-v-xpm/  
 
 https://www.freepng.ru/  
 https://www.online-utility.org/image/convert/to/XPM  
