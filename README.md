@@ -7,6 +7,7 @@ gcc -Wall -Wextra -Werror -Lminilibx -lmlx -framework OpenGL -framework AppKit t
 https://www.online-image-editor.com/  
 https://convertio.co/  
 https://anytools.pro/ru/img/editor/cover  
+https://photokit.com/  
 
 https://www.freepng.ru/  
 https://www.online-utility.org/image/convert/to/XPM  
